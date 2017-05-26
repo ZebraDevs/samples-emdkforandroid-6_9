@@ -1,0 +1,25 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 'Symbol Technologies LLC:EMDK APIs:19'
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.symbol.profilepowermgrsample1"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 7
+        versionName "6.0.1"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}

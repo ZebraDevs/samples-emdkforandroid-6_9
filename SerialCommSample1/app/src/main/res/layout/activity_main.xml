@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.symbol.scanandpairsample1.MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/WriteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:focusable="true"
+            android:text="@string/buttonWrite" >
+        </Button>
+
+        <Button
+            android:id="@+id/ReadButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:focusable="true"
+            android:text="@string/buttonRead" >
+        </Button>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/editBoxTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/editBoxTitle" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="none" />
+
+    <TextView
+        android:id="@+id/statusTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/statusTitle" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="293dp"
+        android:layout_height="278dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarSize="20dp"
+        android:scrollbars="vertical"
+        android:verticalScrollbarPosition="right"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/statusView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ProfileDataCaptureSample1</string>
+    <string name="action_settings">Settings</string>
+    <string name="code128_string">Code128</string>
+    <string name="code39_string">Code39</string>
+    <string name="EAN8_string">EAN8</string>
+    <string name="EAN13_string">EAN13</string>
+    <string name="UPCE_string">UPCA</string>
+    <string name="UPCE0_string">UPCE0</string>
+    <string name="button_set_string">Set</string>
+    <string name="statustext_string"></string>
+    <string name="datatext_string"></string>
+    <string name="statusTitle_string">Status:</string>
+    <string name="dataTitle_string">Scan Data:</string>
+    <string name="clearButton_string">Clear</string>
+
+</resources>
