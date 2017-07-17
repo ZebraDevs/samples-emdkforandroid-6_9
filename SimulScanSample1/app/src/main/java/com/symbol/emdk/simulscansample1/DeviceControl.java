@@ -477,10 +477,10 @@ public class DeviceControl extends Fragment implements OnItemSelectedListener,
                     switch(statusData.getExtendedState())
                     {
                         case UNLICENSED_FEATURE:
-                            statusText = "\nUnlicensed Feature detected: " + statusData.getStatusDescription();
+                            statusText += "\nUnlicensed Feature detected: " + statusData.getStatusDescription();
                             break;
                         default:
-                            statusText = "\n" + statusData.getStatusDescription();
+                            statusText += "\n" + statusData.getStatusDescription();
                             break;
                     }
                     new AsyncStatusUpdate().execute(statusText);

@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2015-2016 Symbol Technologies LLC
+* Copyright (C) 2015-2017 Zebra Technologies Corp
 * All rights reserved.
 */
 package com.symbol.profiledatacapturesample1;

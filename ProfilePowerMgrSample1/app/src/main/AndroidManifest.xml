@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.symbol.profilepowermgrsample1"
-    android:versionCode="6"
-    android:versionName="6.0.0">
-
-    <uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="23" />
+    package="com.symbol.profilepowermgrsample1">
 
     <uses-permission android:name="com.symbol.emdk.permission.EMDK"/>
 
