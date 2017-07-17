@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.symbol.notificationsample1">
 
-    <uses-sdk
-        android:minSdkVersion="22"
-        android:targetSdkVersion="22" />
-
     <uses-permission android:name="com.symbol.emdk.permission.EMDK"/>
 
     <application
