@@ -88,11 +88,6 @@ public class MainActivity extends Activity implements EMDKListener, DataListener
 		
 		deviceList = new ArrayList<ScannerInfo>();
 
-		EMDKResults results = EMDKManager.getEMDKManager(getApplicationContext(), this);
-		if (results.statusCode != EMDKResults.STATUS_CODE.SUCCESS) {
-			textViewStatus.setText("Status: " + "EMDKManager object request failed!");
-		}
-
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
         setDefaultOrientation();
 
@@ -106,6 +101,13 @@ public class MainActivity extends Activity implements EMDKListener, DataListener
         spinnerScannerDevices = (Spinner)findViewById(R.id.spinnerScannerDevices);
         spinnerTriggers = (Spinner)findViewById(R.id.spinnerTriggers);
 
+		
+		EMDKResults results = EMDKManager.getEMDKManager(getApplicationContext(), this);
+		if (results.statusCode != EMDKResults.STATUS_CODE.SUCCESS) {
+			textViewStatus.setText("Status: " + "EMDKManager object request failed!");
+			return;
+		}
+		
         checkBoxEAN8.setOnCheckedChangeListener(this);
         checkBoxEAN13.setOnCheckedChangeListener(this);
         checkBoxCode39.setOnCheckedChangeListener(this);
