@@ -192,7 +192,7 @@ public class MainActivity extends Activity implements EMDKListener, DataListener
                 row.setBackgroundColor(Color.BLACK);
                 row.setPadding(1, 1, 1, 1);
 
-                TableRow.LayoutParams llp = new TableRow.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT,TableLayout.LayoutParams.WRAP_CONTENT);
+                TableRow.LayoutParams llp = new TableRow.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,TableLayout.LayoutParams.MATCH_PARENT);
                 llp.setMargins(0, 0, 2, 0);
 
                 TextView keyText = new TextView(this);
@@ -216,20 +216,21 @@ public class MainActivity extends Activity implements EMDKListener, DataListener
                     row.setBackgroundColor(Color.BLACK);
                     row.setPadding(1, 1, 1, 1);
 
-                    llp = new TableRow.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT,TableLayout.LayoutParams.WRAP_CONTENT);
-                    llp.setMargins(0, 0, 2, 0);
+                    String mKey = modifyDisplayName(data.getKey());
+                    String mValue = data.getData();
 
                     keyText = new TextView(this);
                     keyText.setPadding(5, 5, 5, 5);
                     keyText.setLayoutParams(llp);
                     keyText.setBackgroundColor(Color.WHITE);
-                    keyText.setText(data.getKey());
+                    keyText.setText(mKey);
                     row.addView(keyText);
 
                     valueText = new TextView(this);
                     valueText.setPadding(5, 5, 5, 5);
                     valueText.setBackgroundColor(Color.WHITE);
-                    valueText.setText(data.getData());
+                    valueText.setLayoutParams(llp);
+                    valueText.setText(mValue);
                     row.addView(valueText);
 
                     rows.add(row);
@@ -239,6 +240,45 @@ public class MainActivity extends Activity implements EMDKListener, DataListener
                 new AsyncUDIDataUpdate(rows).execute("Scan type: " + scanDataCollection.getLabelIdentifier());
             }
         }
+    }
+
+    private String modifyDisplayName(String key) {
+        switch(key){
+            case "di":
+                key = "DI";
+                break;
+            case "manufacturing_date_original":
+                key = "MFG Date";
+                break;
+            case "expiration_date_original":
+                key = "EXP Date";
+                break;
+            case "lot_number":
+                key = "Lot Number";
+                break;
+            case "serial_number":
+                key = "Serial Number";
+                break;
+            case "donation_id":
+                key = "Donation ID";
+                break;
+            case "mpho_lot_number":
+                key = "Mpho\nLot Number";
+                break;
+            case "labeler_identification_code":
+                key = "Labeler ID";
+                break;
+            case "product_or_catalog_number":
+                key = "Product/Catalog\nNumber";
+                break;
+            case "unit_of_measure_id":
+                key = "UOM ID";
+                break;
+            case "quantity":
+                key = "Quantity";
+                break;
+        }
+        return key;
     }
 
     @Override

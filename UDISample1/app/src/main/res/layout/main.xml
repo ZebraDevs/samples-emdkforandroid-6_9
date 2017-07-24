@@ -89,17 +89,17 @@
         android:id="@+id/scrollView">
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal" >
             <TableLayout
                 android:id="@+id/tableView"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:stretchColumns="*"
-                android:layout_alignParentStart="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1"
                 android:layout_marginTop="5dp" >
             </TableLayout>
         </LinearLayout>
