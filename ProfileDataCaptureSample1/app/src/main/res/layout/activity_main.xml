@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <CheckBox
+        android:id="@+id/checkBoxEAN8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBoxCode128"
+        android:layout_below="@+id/checkBoxCode128"
+        android:layout_marginTop="20dp"
+        android:checked="true"
+        android:enabled="true"
+        android:text="@string/EAN8_string" />
+
+    <CheckBox
+        android:id="@+id/checkBoxEAN13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/checkBoxEAN8"
+        android:layout_alignBottom="@+id/checkBoxEAN8"
+        android:layout_alignLeft="@+id/checkBoxCode39"
+        android:text="@string/EAN13_string" />
+
+    <CheckBox
+        android:id="@+id/checkBoxUPCE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBoxEAN8"
+        android:layout_below="@+id/checkBoxEAN8"
+        android:layout_marginTop="14dp"
+        android:checked="true"
+        android:enabled="true"
+        android:text="@string/UPCE_string" />
+
+    <CheckBox
+        android:id="@+id/checkBoxUPCE0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/checkBoxUPCE"
+        android:layout_alignLeft="@+id/checkBoxEAN13"
+        android:text="@string/UPCE0_string" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCode128"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:checked="true"
+        android:enabled="true"
+        android:text="@string/code128_string" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCode39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkBoxEAN8"
+        android:layout_toLeftOf="@+id/buttonSet"
+        android:text="@string/code39_string" />
+
+    <Button
+        android:id="@+id/buttonSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/checkBoxEAN13"
+        android:layout_marginRight="24dp"
+        android:text="@string/button_set_string" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewStatusTitle"
+        android:layout_alignLeft="@+id/checkBoxUPCE"
+        android:layout_alignRight="@+id/buttonSet"
+        android:layout_below="@+id/buttonSet"
+        android:ems="5"
+        android:inputType="none"
+        android:scrollbars="vertical" />
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewStatusTitle"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/editText1"
+        android:layout_marginBottom="34dp"
+        android:text="@string/statustext_string" />
+
+    <TextView
+        android:id="@+id/textViewStatusTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewStatus"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_marginBottom="18dp"
+        android:text="@string/statusTitle_string" />
+
+</RelativeLayout>

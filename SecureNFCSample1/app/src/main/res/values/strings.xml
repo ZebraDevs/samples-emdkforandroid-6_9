@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SecureNFCSample1</string>
+    <string name="SamType"></string>
+    <string name="read">read</string>
+    <string name="write">write</string>
+    <string name="inc">increment</string>
+    <string name="dec">decrement</string>
+    <string name="no_nfc">No NFC found on this device</string>
+    <string name="Status">Status</string>
+    <string name="enterData">Enter Data</string>
+    <string name="entrVal">Enter Value</string>
+    <string name="action_settings">Settings</string>
+    <string name="write_succ">Write operation is Successful</string>
+    <string name="debit_succ">Debit operation is Successful</string>
+
+</resources>

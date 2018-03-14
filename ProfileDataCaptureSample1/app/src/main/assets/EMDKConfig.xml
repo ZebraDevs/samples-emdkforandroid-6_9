@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This is an auto generated document. Changes to this document may cause incorrect behavior.-->
+<wap-provisioningdoc>
+  <characteristic type="ProfileInfo">
+    <parm name="created_wizard_version" value="6.0.1"/>
+  </characteristic>
+  <characteristic type="Profile">
+    <parm name="ProfileName" value="DataCaptureProfile-1"/>
+    <parm name="ModifiedDate" value="2016-09-28 14:12:31"/>
+    <characteristic type="ActivitySelection" version="0.1">
+      <parm name="emdk_name" value=""/>
+      <characteristic type="Application">
+        <parm name="package" value="com.symbol.profiledatacapturesample1"/>
+        <characteristic type="Activities">
+          <parm name="activity" value="MainActivity"/>
+        </characteristic>
+      </characteristic>
+    </characteristic>
+    <characteristic type="Keystroke" version="0.1">
+      <parm name="emdk_name" value=""/>
+      <parm name="ime_output_enabled" value="true"/>
+      <parm name="keystroke_action_char" value="Default"/>
+      <characteristic type="BasicDataFormatting">
+        <parm name="bdf_enabled" value="true"/>
+        <parm name="bdf_prefix" value=""/>
+        <parm name="bdf_suffix" value=""/>
+        <parm name="bdf_send_data" value="true"/>
+        <parm name="bdf_send_hex" value="Default"/>
+        <parm name="bdf_send_tab" value="Default"/>
+        <parm name="bdf_send_enter" value="true"/>
+      </characteristic>
+    </characteristic>
+    <characteristic type="Barcode" version="6.0">
+      <parm name="emdk_name" value=""/>
+      <parm name="scanner_input_enabled" value="true"/>
+      <parm name="ScannerSelection" value="AUTO"/>
+      <characteristic type="Decoders">
+        <parm name="decoder_upca" value="true"/>
+        <parm name="decoder_upce0" value="false"/>
+        <parm name="decoder_ean13" value="false"/>
+        <parm name="decoder_ean8" value="true"/>
+        <parm name="decoder_code128" value="true"/>
+        <parm name="decoder_code39" value="false"/>
+        <parm name="decoder_i2of5" value="Default"/>
+        <parm name="decoder_gs1_databar" value="Default"/>
+        <parm name="decoder_gs1_databar_lim" value="Default"/>
+        <parm name="decoder_gs1_databar_exp" value="Default"/>
+        <parm name="decoder_datamatrix" value="Default"/>
+        <parm name="decoder_qrcode" value="Default"/>
+        <parm name="decoder_pdf417" value="Default"/>
+        <parm name="decoder_composite_ab" value="Default"/>
+        <parm name="decoder_composite_c" value="Default"/>
+        <parm name="decoder_microqr" value="Default"/>
+        <parm name="decoder_aztec" value="Default"/>
+        <parm name="decoder_maxicode" value="Default"/>
+        <parm name="decoder_micropdf" value="Default"/>
+        <parm name="decoder_uspostnet" value="Default"/>
+        <parm name="decoder_usplanet" value="Default"/>
+        <parm name="decoder_uk_postal" value="Default"/>
+        <parm name="decoder_japanese_postal" value="Default"/>
+        <parm name="decoder_australian_postal" value="Default"/>
+        <parm name="decoder_canadian_postal" value="Default"/>
+        <parm name="decoder_dutch_postal" value="Default"/>
+        <parm name="decoder_us4state" value="Default"/>
+        <parm name="decoder_us4state_fics" value="Default"/>
+        <parm name="decoder_codabar" value="Default"/>
+        <parm name="decoder_msi" value="Default"/>
+        <parm name="decoder_code93" value="Default"/>
+        <parm name="decoder_trioptic39" value="Default"/>
+        <parm name="decoder_d2of5" value="Default"/>
+        <parm name="decoder_chinese_2of5" value="Default"/>
+        <parm name="decoder_korean_3of5" value="Default"/>
+        <parm name="decoder_code11" value="Default"/>
+        <parm name="decoder_tlc39" value="Default"/>
+        <parm name="decoder_mailmark" value="Default"/>
+        <parm name="decoder_hanxin" value="Default"/>
+        <parm name="decoder_signature" value="Default"/>
+        <parm name="decoder_webcode" value="Default"/>
+        <parm name="decoder_matrix_2of5" value="Default"/>
+        <parm name="decoder_upce1" value="Default"/>
+      </characteristic>
+      <characteristic type="DecoderParams">
+        <characteristic type="UPCA">
+          <parm name="decoder_upca_report_check_digit" value="Default"/>
+          <parm name="decoder_upca_preamble" value="Default"/>
+        </characteristic>
+        <characteristic type="UPCE0">
+          <parm name="decoder_upce0_report_check_digit" value="Default"/>
+          <parm name="decoder_upce0_preamble" value="Default"/>
+          <parm name="decoder_upce0_convert_to_upca" value="Default"/>
+        </characteristic>
+        <characteristic type="EAN8">
+          <parm name="decoder_ean8_convert_to_ean13" value="Default"/>
+        </characteristic>
+        <characteristic type="Code128">
+          <parm name="decoder_code128_length1" value="0"/>
+          <parm name="decoder_code128_length2" value="55"/>
+          <parm name="decoder_code128_redundancy" value="Default"/>
+          <parm name="decoder_code128_enable_plain" value="Default"/>
+          <parm name="decoder_code128_enable_ean128" value="Default"/>
+          <parm name="decoder_code128_enable_isbt128" value="Default"/>
+          <parm name="decoder_code128_isbt128_concat_mode" value="Default"/>
+          <parm name="decoder_code128_check_isbt_table" value="Default"/>
+          <parm name="decoder_code128_security_level" value="Default"/>
+          <parm name="code128_enable_marginless_decode" value="Default"/>
+          <parm name="code128_ignore_fnc4" value="Default"/>
+        </characteristic>
+        <characteristic type="Code39">
+          <parm name="decoder_code39_length1" value="0"/>
+          <parm name="decoder_code39_length2" value="55"/>
+          <parm name="decoder_code39_verify_check_digit" value="Default"/>
+          <parm name="decoder_code39_report_check_digit" value="Default"/>
+          <parm name="decoder_code39_full_ascii" value="Default"/>
+          <parm name="decoder_code39_redundancy" value="Default"/>
+          <parm name="decoder_code39_convert_to_code32" value="Default"/>
+          <parm name="decoder_code39_report_code32_prefix" value="Default"/>
+          <parm name="decoder_code39_security_level" value="Default"/>
+          <parm name="code39_enable_marginless_decode" value="Default"/>
+        </characteristic>
+        <characteristic type="Interleaved_2of5">
+          <parm name="decoder_i2of5_length1" value="14"/>
+          <parm name="decoder_i2of5_length2" value="10"/>
+          <parm name="decoder_i2of5_redundancy" value="Default"/>
+          <parm name="decoder_i2of5_check_digit" value="Default"/>
+          <parm name="decoder_i2of5_report_check_digit" value="Default"/>
+          <parm name="decoder_itf14_convert_to_ean13" value="Default"/>
+          <parm name="decoder_i2of5_security_level" value="Default"/>
+          <parm name="i20f5_enable_marginless_decode" value="Default"/>
+        </characteristic>
+        <characteristic type="GS1_Databar_Limited">
+          <parm name="decoder_gs1_lim_security_level" value="Default"/>
+        </characteristic>
+        <characteristic type="Composite_AB">
+          <parm name="decoder_composite_ab_ucc_link_mode" value="Default"/>
+        </characteristic>
+        <characteristic type="US_Postnet">
+          <parm name="decoder_uspostnet_report_check_digit" value="Default"/>
+        </characteristic>
+        <characteristic type="US_Planet">
+          <parm name="decoder_usplanet_report_check_digit" value="Default"/>
+        </characteristic>
+        <characteristic type="UK_Postal">
+          <parm name="decoder_uk_postal_report_check_digit" value="Default"/>
+        </characteristic>
+        <characteristic type="Codabar">
+          <parm name="decoder_codabar_length1" value="6"/>
+          <parm name="decoder_codabar_length2" value="55"/>
+          <parm name="decoder_codabar_redundancy" value="Default"/>
+          <parm name="decoder_codabar_clsi_editing" value="Default"/>
+          <parm name="decoder_codabar_notis_editing" value="Default"/>
+        </characteristic>
+        <characteristic type="MSI">
+          <parm name="decoder_msi_length1" value="4"/>
+          <parm name="decoder_msi_length2" value="55"/>
+          <parm name="decoder_msi_redundancy" value="Default"/>
+          <parm name="decoder_msi_check_digit" value="Default"/>
+          <parm name="decoder_msi_check_digit_scheme" value="Default"/>
+          <parm name="decoder_msi_report_check_digit" value="Default"/>
+        </characteristic>
+        <characteristic type="Code93">
+          <parm name="decoder_code93_length1" value="0"/>
+          <parm name="decoder_code93_length2" value="55"/>
+          <parm name="decoder_code93_redundancy" value="Default"/>
+        </characteristic>
+        <characteristic type="Trioptic_39">
+          <parm name="decoder_trioptic39_redundancy" value="Default"/>
+        </characteristic>
+        <characteristic type="Discrete_2of5">
+          <parm name="decoder_d2of5_length1" value="0"/>
+          <parm name="decoder_d2of5_length2" value="14"/>
+          <parm name="decoder_d2of5_redundancy" value="Default"/>
+        </characteristic>
+        <characteristic type="Code11">
+          <parm name="decoder_code11_length1" value="4"/>
+          <parm name="decoder_code11_length2" value="55"/>
+          <parm name="decoder_code11_redundancy" value="Default"/>
+          <parm name="decoder_code11_verify_check_digit" value="Default"/>
+          <parm name="decoder_code11_report_check_digit" value="Default"/>
+        </characteristic>
+        <characteristic type="Han_Xin">
+          <parm name="decoder_hanxin_inverse" value="Default"/>
+        </characteristic>
+        <characteristic type="Matrix_2of5">
+          <parm name="decoder_matrix_2of5_length1" value="10"/>
+          <parm name="decoder_matrix_2of5_length2" value="0"/>
+          <parm name="decoder_matrix_2of5_redundancy" value="Default"/>
+          <parm name="decoder_matrix_2of5_report_check_digit" value="Default"/>
+          <parm name="decoder_matrix_2of5_verify_check_digit" value="Default"/>
+        </characteristic>
+        <characteristic type="UPCE1">
+          <parm name="decoder_upce1_report_check_digit" value="Default"/>
+          <parm name="decoder_upce1_preamble" value="Default"/>
+          <parm name="decoder_upce1_convert_to_upca" value="Default"/>
+        </characteristic>
+      </characteristic>
+      <characteristic type="UpcEanParams">
+        <parm name="upcean_security_level" value="Default"/>
+        <parm name="upcean_supplemental2" value="Default"/>
+        <parm name="upcean_supplemental5" value="Default"/>
+        <parm name="upcean_supplemental_mode" value="Default"/>
+        <parm name="upcean_retry_count" value="10"/>
+        <parm name="upcean_random_weight_check_digit" value="Default"/>
+        <parm name="upcean_linear_decode" value="Default"/>
+        <parm name="upcean_bookland" value="Default"/>
+        <parm name="upcean_coupon" value="Default"/>
+        <parm name="upcean_coupon_report" value="Default"/>
+        <parm name="upcean_ean_zero_extend" value="Default"/>
+        <parm name="upcean_bookland_format" value="Default"/>
+        <parm name="databar_to_upc_ean" value="Default"/>
+        <parm name="upc_enable_marginless_decode" value="Default"/>
+      </characteristic>
+      <characteristic type="ReaderParams">
+        <parm name="aim_mode" value="Default"/>
+        <parm name="beam_timer" value="15000"/>
+        <parm name="Adaptive_Scanning" value="Default"/>
+        <parm name="Beam_Width" value="Default"/>
+        <parm name="power_mode" value="Default"/>
+        <parm name="mpd_mode" value="Default"/>
+        <parm name="reader_mode" value="Default"/>
+        <parm name="linear_security_level" value="Default"/>
+        <parm name="picklist" value="Default"/>
+        <parm name="aim_type" value="Default"/>
+        <parm name="aim_timer" value="500"/>
+        <parm name="same_barcode_timeout" value="500"/>
+        <parm name="different_barcode_timeout" value="500"/>
+        <parm name="illumination_mode" value="Default"/>
+        <parm name="lcd_mode" value="Default"/>
+        <parm name="low_power_timeout" value="250"/>
+        <parm name="delay_to_low_power_mode" value="Default"/>
+        <parm name="illumination_brightness" value="10"/>
+        <parm name="inverse_1d_mode" value="Default"/>
+        <parm name="viewfinder_size" value="100"/>
+        <parm name="viewfinder_posx" value="0"/>
+        <parm name="viewfinder_posy" value="0"/>
+        <parm name="1d_marginless_decode_effort_level" value="Default"/>
+        <parm name="poor_quality_bcdecode_effort_level" value="Default"/>
+        <parm name="charset_name" value="Default"/>
+        <parm name="viewfinder_mode" value="Default"/>
+      </characteristic>
+      <characteristic type="ScanParams">
+        <parm name="code_id_type" value="Default"/>
+        <parm name="volume_slider_type" value="Default"/>
+        <parm name="decode_audio_feedback_uri" value="Default"/>
+        <parm name="decode_haptic_feedback" value="Default"/>
+        <parm name="bt_disconnect_on_exit" value="Default"/>
+        <parm name="connection_idle_time" value="600"/>
+        <parm name="establish_connection_time" value="45"/>
+        <parm name="remote_scanner_audio_feedback_mode" value="Default"/>
+        <parm name="remote_scanner_led_feedback_mode" value="Default"/>
+        <parm name="display_bt_address_barcode" value="Default"/>
+        <parm name="good_decode_led_timer" value="75"/>
+        <parm name="decoding_led_feedback" value="Default"/>
+      </characteristic>
+    </characteristic>
+  </characteristic>
+</wap-provisioningdoc>
