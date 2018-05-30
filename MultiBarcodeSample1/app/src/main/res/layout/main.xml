@@ -6,6 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     tools:context="com.symbol.multibarcodesample1.MainActivity" >
 
     <Spinner
@@ -13,7 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView1"
@@ -45,7 +48,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Barcode Count (1-10)"
+        android:text="Barcode Count (2-10)"
         android:layout_below="@+id/spinnerTriggers"
         android:layout_alignParentStart="true"
         android:layout_marginTop="13dp" />

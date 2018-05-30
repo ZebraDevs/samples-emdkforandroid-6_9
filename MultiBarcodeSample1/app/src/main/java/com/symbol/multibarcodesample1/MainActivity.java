@@ -470,6 +470,8 @@ public class MainActivity extends Activity implements EMDKListener, DataListener
                 ScannerConfig config = scanner.getConfig();
                 if (!config.isParamSupported("config.multiBarcodeParams.barcodeCount")){
                     new AsyncMultiDataUpdate(new ArrayList<TableRow>()).execute("NOTE: Multibarcode feature is unsupported in the selected scanner");
+                } else {
+                    new AsyncMultiDataUpdate(new ArrayList<TableRow>()).execute("");
                 }
             } catch (Exception e) {
                 textViewStatus.setText("Status: " + e.getMessage());

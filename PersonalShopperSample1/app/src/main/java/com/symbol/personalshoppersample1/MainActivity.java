@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2015-2017 Zebra Technologies Corp
+* Copyright (C) 2015-2018 Zebra Technologies Corp
 * All rights reserved.
 */
 package com.symbol.personalshoppersample1;
@@ -37,12 +37,25 @@ public class MainActivity extends Activity implements EMDKListener {
     boolean mLedsmooth = false;
     private TextView textViewStatus = null;
 
+    private CheckBox mFCState = null;
+    private CheckBox mFCSmooth = null;
+    private Button btnCrdInfo = null;
+    private Button btnSetCfgLeds = null;
+    private Button btnUnlock = null;
+    private Button btnFlashLeds = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         textViewStatus = (TextView)findViewById(R.id.PStextView);
+        mFCState = (CheckBox)this.findViewById(R.id.ChecBoxfastcharge);
+        mFCSmooth = (CheckBox)findViewById(R.id.checkBox1);
+        btnCrdInfo = (Button)this.findViewById(R.id.CradleInfoButton1);
+        btnSetCfgLeds = (Button)this.findViewById(R.id.Diagnosticdata);
+        btnUnlock = (Button)this.findViewById(R.id.UnlockButton1);
+        btnFlashLeds = (Button)this.findViewById(R.id.FlashLEDButton1);
 
         EMDKResults results = EMDKManager.getEMDKManager(getApplicationContext(), this);
         if (results.statusCode != EMDKResults.STATUS_CODE.SUCCESS) {
@@ -60,7 +73,6 @@ public class MainActivity extends Activity implements EMDKListener {
     }
 
     private void addDiagnosticButtonListener() {
-        Button btnSetCfgLeds = (Button)this.findViewById(R.id.Diagnosticdata);
         btnSetCfgLeds.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
@@ -100,15 +112,13 @@ public class MainActivity extends Activity implements EMDKListener {
         }
     }
 
-    private void addSmmothCheckboxListener() throws CradleException {
+    private void addSmoothCheckboxListener() throws CradleException {
         if(null!=PsObject.cradle){
-            CheckBox mFCState =(CheckBox)findViewById(R.id.checkBox1);
-            mLedsmooth = mFCState.isChecked() ;
+            mLedsmooth = mFCSmooth.isChecked() ;
         }
     }
 
     private void addFCCheckboxListener() {
-        final CheckBox mFCState =(CheckBox)this.findViewById(R.id.ChecBoxfastcharge);
         mFCState.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
@@ -175,9 +185,8 @@ public class MainActivity extends Activity implements EMDKListener {
     protected void onDestroy() {
         super.onDestroy();
 
-        disable();
-
         if (PsObject != null) {
+            disable();
             PsObject = null;
         }
 
@@ -189,14 +198,15 @@ public class MainActivity extends Activity implements EMDKListener {
     }
     @Override
     public void onClosed() {
-        // TODO Auto-generated method stub
-        emdkManager.release();
 
+        if (emdkManager != null) {
+            emdkManager.release();
+            emdkManager = null;
+        }
 
     }
 
     void addFlashLedsButtonListener() {
-        Button btnFlashLeds = (Button)this.findViewById(R.id.FlashLEDButton1);
         btnFlashLeds.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -213,7 +223,7 @@ public class MainActivity extends Activity implements EMDKListener {
             int flashCount = 5;
 
             try {
-                addSmmothCheckboxListener();
+                addSmoothCheckboxListener();
                 CradleLedFlashInfo ledFlashInfo = new CradleLedFlashInfo(onDuration, offDuration, mLedsmooth);
                 CradleResults result = PsObject.cradle.flashLed(flashCount, ledFlashInfo);
                 if(result == CradleResults.SUCCESS){
@@ -223,7 +233,7 @@ public class MainActivity extends Activity implements EMDKListener {
                     textViewStatus.setText("Status: " + "Failed error "+result.getDescription());
                 }
             }catch (CradleException e) {
-                // TODO Auto-generated catch block
+
                 e.printStackTrace();
                 textViewStatus.setText("Status: " + e.getMessage());
             }
@@ -231,7 +241,6 @@ public class MainActivity extends Activity implements EMDKListener {
     }
 
     private void addbtnUnlockButtonListener() {
-        Button btnUnlock = (Button)this.findViewById(R.id.UnlockButton1);
         btnUnlock.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -250,7 +259,7 @@ public class MainActivity extends Activity implements EMDKListener {
             int unlockDuration = 15;
 
             try {
-                addSmmothCheckboxListener();
+                addSmoothCheckboxListener();
                 CradleLedFlashInfo ledFlashInfo = new CradleLedFlashInfo(onDuration, offDuration, mLedsmooth);
                 CradleResults result = PsObject.cradle.unlock(unlockDuration, ledFlashInfo);
                 if(result == CradleResults.SUCCESS){
@@ -260,7 +269,7 @@ public class MainActivity extends Activity implements EMDKListener {
                     textViewStatus.setText("Status: " + "Failed error "+result.getDescription());
                 }
             }catch (CradleException e) {
-                // TODO Auto-generated catch block
+
                 e.printStackTrace();
                 textViewStatus.setText("Status: " + e.getMessage());
             }
@@ -269,7 +278,6 @@ public class MainActivity extends Activity implements EMDKListener {
 
 
     private void addCrdInfoButtonListener() {
-        Button btnCrdInfo = (Button)this.findViewById(R.id.CradleInfoButton1);
         btnCrdInfo.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -306,12 +314,11 @@ public class MainActivity extends Activity implements EMDKListener {
 
     protected void disable() {
         try {
-            if(null!=PsObject.cradle)
-            {
+            if (null != PsObject.cradle) {
                 PsObject.cradle.disable();
             }
         } catch (CradleException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
             textViewStatus.setText("Status: " + e.getMessage());
         }
@@ -319,12 +326,11 @@ public class MainActivity extends Activity implements EMDKListener {
 
     protected void enable() {
         try {
-            if(null!=PsObject.cradle)
-            {
+            if(null!=PsObject.cradle) {
                 PsObject.cradle.enable();
             }
         } catch (CradleException e) {
-            // TODO Auto-generated catch block
+
             e.printStackTrace();
             textViewStatus.setText("Status: " + e.getMessage());
         }
@@ -343,12 +349,22 @@ public class MainActivity extends Activity implements EMDKListener {
         }
 
         if (PsObject == null) {
-            textViewStatus.setText("Status: " + "PersonalShopper NOT Feature supported");
+            textViewStatus.setText("Status: " + "PersonalShopper Feature NOT supported");
+            disableUI();
         }
         else
         {
             enable();
         }
+    }
+
+    private void disableUI() {
+        mFCState.setEnabled(false);
+        mFCSmooth.setEnabled(false);
+        btnCrdInfo.setEnabled(false);
+        btnSetCfgLeds.setEnabled(false);
+        btnUnlock.setEnabled(false);
+        btnFlashLeds.setEnabled(false);
     }
 
 }
